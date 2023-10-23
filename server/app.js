@@ -14,6 +14,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
+// ADD THE NEW ROUTE HERE
+app.get('/', (req, res) => {
+    res.send('My Student ID is 20256951. Welcome to Express');
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
